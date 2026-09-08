@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PandoraOS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="boot-logo">PandoraOS</div>
+        <div class="boot-loading"></div>
+    </div>
+
+    <!-- Lock Screen -->
+    <div id="lock-screen">
+        <div class="lock-content">
+            <div id="lock-time">00:00</div>
+            <div id="lock-date">Loading...</div>
+            <button id="unlock-button">Unlock</button>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <main id="desktop">
+
+        <!-- Desktop Icons -->
+        <section id="desktop-icons">
+
+            <button class="desktop-icon" data-app="files">
+                <span class="icon">📁</span>
+                <span>Files</span>
+            </button>
+
+            <button class="desktop-icon" data-app="terminal">
+                <span class="icon">⌨️</span>
+                <span>Terminal</span>
+            </button>
+
+            <button class="desktop-icon" data-app="settings">
+                <span class="icon">⚙️</span>
+                <span>Settings</span>
+            </button>
+
+            <button class="desktop-icon" data-app="about">
+                <span class="icon">ℹ️</span>
+                <span>About PandoraOS</span>
+            </button>
+
+        </section>
+
+        <!-- Window Area -->
+        <section id="window-area"></section>
+
+        <!-- Taskbar -->
+        <nav id="taskbar">
+
+            <button id="start-button">
+                <span>◈</span>
+                <span>Pandora</span>
+            </button>
+
+            <div id="running-apps"></div>
+
+            <div id="system-tray">
+                <span id="network-status">●</span>
+                <span id="battery-status">🔋</span>
+                <span id="clock">00:00</span>
+            </div>
+
+        </nav>
+
+        <!-- Start Menu -->
+        <div id="start-menu">
+
+            <div class="start-header">
+                <h2>PandoraOS</h2>
+            </div>
+
+            <div class="app-list">
+
+                <button class="app-item" data-app="files">
+                    📁
+                    <span>Files</span>
+                </button>
+
+                <button class="app-item" data-app="terminal">
+                    ⌨️
+                    <span>Terminal</span>
+                </button>
+
+                <button class="app-item" data-app="settings">
+                    ⚙️
+                    <span>Settings</span>
+                </button>
+
+                <button class="app-item" data-app="about">
+                    ℹ️
+                    <span>About</span>
+                </button>
+
+            </div>
+
+            <div class="start-footer">
+                <button id="power-button">⏻ Power</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
