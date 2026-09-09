@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PandoraOS - Configuración</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         PandoraOS Setup
+         ======================================== -->
+
+    <div id="setup">
+
+        <!-- Header -->
+
+        <header id="setup-header">
+            <div class="setup-logo">
+                ◈ PandoraOS
+            </div>
+
+            <div id="setup-step">
+                Paso 1 de 4
+            </div>
+        </header>
+
+
+        <!-- ========================================
+             Step 1 - Welcome
+             ======================================== -->
+
+        <section class="setup-page active" id="step-welcome">
+
+            <div class="setup-icon">
+                ◈
+            </div>
+
+            <h1>Bienvenido a PandoraOS</h1>
+
+            <p>
+                Este asistente te ayudará a configurar
+                PandoraOS por primera vez.
+            </p>
+
+            <button
+                class="setup-button primary"
+                data-next="2">
+                Comenzar
+            </button>
+
+        </section>
+
+
+        <!-- ========================================
+             Step 2 - User
+             ======================================== -->
+
+        <section class="setup-page" id="step-user">
+
+            <div class="setup-icon">
+                👤
+            </div>
+
+            <h1>¿Cómo te llamas?</h1>
+
+            <p>
+                Este nombre será utilizado por PandoraOS.
+            </p>
+
+            <input
+                id="username"
+                type="text"
+                placeholder="Nombre de usuario"
+                maxlength="30"
+                autocomplete="off">
+
+            <div class="setup-buttons">
+
+                <button
+                    class="setup-button secondary"
+                    data-back="1">
+                    Atrás
+                </button>
+
+                <button
+                    class="setup-button primary"
+                    data-next="3">
+                    Continuar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             Step 3 - Appearance
+             ======================================== -->
+
+        <section class="setup-page" id="step-appearance">
+
+            <div class="setup-icon">
+                🎨
+            </div>
+
+            <h1>Personaliza PandoraOS</h1>
+
+            <p>
+                Elige cómo quieres que se vea tu sistema.
+            </p>
+
+
+            <!-- Theme -->
+
+            <div class="setup-option">
+
+                <label for="theme">
+                    Tema
+                </label>
+
+                <select id="theme">
+
+                    <option value="dark">
+                        Oscuro
+                    </option>
+
+                    <option value="light">
+                        Claro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Wallpaper -->
+
+            <div class="setup-option">
+
+                <label for="wallpaper">
+                    Fondo de escritorio
+                </label>
+
+                <select id="wallpaper">
+
+                    <option value="default">
+                        Pandora
+                    </option>
+
+                    <option value="midnight">
+                        Midnight
+                    </option>
+
+                    <option value="blue">
+                        Blue
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="setup-buttons">
+
+                <button
+                    class="setup-button secondary"
+                    data-back="2">
+                    Atrás
+                </button>
+
+                <button
+                    class="setup-button primary"
+                    data-next="4">
+                    Continuar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             Step 4 - Installation
+             ======================================== -->
+
+        <section class="setup-page" id="step-install">
+
+            <div class="setup-icon">
+                ⚙️
+            </div>
+
+            <h1>Configurando PandoraOS</h1>
+
+            <p id="install-status">
+                Preparando configuración...
+            </p>
+
+            <div id="progress-container">
+
+                <div id="progress-bar"></div>
+
+            </div>
+
+            <div id="progress-text">
+                0%
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             Finished
+             ======================================== -->
+
+        <section class="setup-page" id="step-finished">
+
+            <div class="setup-icon success">
+                ✓
+            </div>
+
+            <h1>¡Todo listo!</h1>
+
+            <p>
+                PandoraOS ha terminado de configurarse.
+            </p>
+
+            <p id="welcome-user">
+                Bienvenido a PandoraOS.
+            </p>
+
+            <button
+                id="launch-pandora"
+                class="setup-button primary">
+                Iniciar PandoraOS
+            </button>
+
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer id="setup-footer">
+            PandoraOS Setup
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

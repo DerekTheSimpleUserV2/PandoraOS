@@ -1,0 +1,947 @@
+/* ========================================
+   PandoraOS - style.css
+   Desktop + Installation Setup
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #10131a;
+    color: white;
+}
+
+
+/* ========================================
+   BOOT SCREEN
+   ======================================== */
+
+#boot-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #10131a;
+}
+
+.boot-logo {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.boot-loading {
+    width: 180px;
+    height: 4px;
+
+    margin-top: 30px;
+
+    background: #333;
+
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.boot-loading::after {
+    content: "";
+
+    display: block;
+
+    width: 60%;
+    height: 100%;
+
+    background: white;
+
+    animation: boot-loading 1.2s infinite;
+}
+
+@keyframes boot-loading {
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+
+/* ========================================
+   LOCK SCREEN
+   ======================================== */
+
+#lock-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(10, 15, 25, 0.55),
+            rgba(10, 15, 25, 0.75)
+        ),
+        #182033;
+}
+
+.lock-content {
+    text-align: center;
+}
+
+#lock-time {
+    font-size: 90px;
+    font-weight: 300;
+}
+
+#lock-date {
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    opacity: 0.8;
+}
+
+#unlock-button {
+    margin-top: 35px;
+
+    padding: 12px 28px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: white;
+    color: #111;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+#unlock-button:hover {
+    background: #ddd;
+}
+
+
+/* ========================================
+   DESKTOP
+   ======================================== */
+
+#desktop {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #293653,
+            #10131a 70%
+        );
+}
+
+
+/* ========================================
+   DESKTOP ICONS
+   ======================================== */
+
+#desktop-icons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+}
+
+.desktop-icon {
+    width: 90px;
+
+    padding: 10px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.desktop-icon .icon {
+    font-size: 34px;
+}
+
+.desktop-icon span:last-child {
+    font-size: 13px;
+}
+
+
+/* ========================================
+   WINDOW AREA
+   ======================================== */
+
+#window-area {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.window {
+    position: absolute;
+
+    width: 500px;
+    min-height: 300px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: #1d222c;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45);
+
+    pointer-events: auto;
+}
+
+
+/* ========================================
+   TITLEBAR
+   ======================================== */
+
+.titlebar {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px 0 15px;
+
+    background: #292f3b;
+
+    cursor: grab;
+
+    user-select: none;
+}
+
+.titlebar:active {
+    cursor: grabbing;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.window-buttons {
+    display: flex;
+
+    gap: 5px;
+}
+
+.window-buttons button {
+    width: 30px;
+    height: 28px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: transparent;
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.window-buttons button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.window-buttons .close-button:hover {
+    background: #c43c3c;
+}
+
+
+/* ========================================
+   WINDOW CONTENT
+   ======================================== */
+
+.window-content {
+    padding: 20px;
+
+    color: #eee;
+
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.window-content h2 {
+    margin-bottom: 12px;
+}
+
+.window-content hr {
+    border: 0;
+
+    border-top: 1px solid #3b424f;
+
+    margin: 15px 0;
+}
+
+.window-content button {
+    padding: 9px 15px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #394355;
+    color: white;
+
+    cursor: pointer;
+}
+
+.window-content button:hover {
+    background: #4a566c;
+}
+
+
+/* ========================================
+   TASKBAR
+   ======================================== */
+
+#taskbar {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 10px;
+
+    background: rgba(20, 24, 32, 0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#start-button {
+    height: 40px;
+
+    padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #303746;
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+#start-button:hover {
+    background: #3d4658;
+}
+
+#running-apps {
+    display: flex;
+
+    gap: 6px;
+
+    margin-left: 10px;
+}
+
+.task-button {
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #292f3b;
+    color: white;
+
+    cursor: pointer;
+}
+
+.task-button:hover {
+    background: #3b4352;
+}
+
+
+/* ========================================
+   SYSTEM TRAY
+   ======================================== */
+
+#system-tray {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 10px;
+
+    font-size: 14px;
+}
+
+#network-status {
+    font-size: 10px;
+}
+
+
+/* ========================================
+   START MENU
+   ======================================== */
+
+#start-menu {
+    position: absolute;
+
+    left: 10px;
+    bottom: 68px;
+
+    width: 330px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(28, 33, 43, 0.97);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease,
+        visibility 0.15s;
+}
+
+#start-menu.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.start-header {
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #3a414d;
+}
+
+.start-header h2 {
+    font-size: 20px;
+}
+
+.app-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.app-item {
+    min-height: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 13px;
+}
+
+.app-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.start-footer {
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #3a414d;
+}
+
+#power-button {
+    width: 100%;
+
+    padding: 10px;
+
+    border: 0;
+    border-radius: 7px;
+
+    background: #303746;
+    color: white;
+
+    cursor: pointer;
+}
+
+#power-button:hover {
+    background: #4a3030;
+}
+
+
+/* ========================================
+   TERMINAL
+   ======================================== */
+
+.terminal {
+    min-height: 220px;
+
+    padding: 15px;
+
+    border-radius: 7px;
+
+    background: #0b0d11;
+    color: #e8e8e8;
+
+    font-family: monospace;
+    font-size: 14px;
+
+    overflow-y: auto;
+}
+
+.terminal-input {
+    width: 70%;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+    color: white;
+
+    font-family: monospace;
+}
+
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+
+.dark-mode #desktop {
+    background:
+        radial-gradient(
+            circle at 30% 20%,
+            #151515,
+            #050505 70%
+        );
+}
+
+
+/* ========================================
+   PANDORAOS SETUP
+   ======================================== */
+
+#setup {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #293653,
+            #10131a 70%
+        );
+}
+
+
+/* ========================================
+   SETUP HEADER
+   ======================================== */
+
+#setup-header {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(15, 18, 25, 0.5);
+}
+
+.setup-logo {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+#setup-step {
+    font-size: 14px;
+
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   SETUP PAGES
+   ======================================== */
+
+.setup-page {
+    display: none;
+
+    width: min(600px, calc(100% - 40px));
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.setup-page.active {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.setup-icon {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    font-size: 42px;
+}
+
+.setup-icon.success {
+    background: rgba(80, 180, 110, 0.15);
+
+    color: #8ee6a5;
+}
+
+.setup-page h1 {
+    margin-bottom: 12px;
+
+    font-size: 34px;
+}
+
+.setup-page p {
+    max-width: 500px;
+
+    margin-bottom: 25px;
+
+    color: #c7ccd6;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   SETUP INPUT
+   ======================================== */
+
+#username {
+    width: min(400px, 100%);
+
+    padding: 14px 16px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #3d4658;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #1c212b;
+    color: white;
+
+    font-size: 16px;
+}
+
+#username:focus {
+    border-color: #77849b;
+
+    background: #222936;
+}
+
+#username::placeholder {
+    color: #7f8794;
+}
+
+
+/* ========================================
+   SETUP OPTIONS
+   ======================================== */
+
+.setup-option {
+    width: min(450px, 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    margin-bottom: 10px;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    text-align: left;
+}
+
+.setup-option label {
+    font-size: 15px;
+}
+
+.setup-option select {
+    padding: 8px 12px;
+
+    border: 1px solid #424b5b;
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #252b36;
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   SETUP BUTTONS
+   ======================================== */
+
+.setup-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.setup-button {
+    min-width: 120px;
+
+    padding: 12px 22px;
+
+    border: 0;
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.1s ease,
+        background 0.15s ease;
+}
+
+.setup-button:active {
+    transform: scale(0.97);
+}
+
+.setup-button.primary {
+    background: white;
+    color: #111;
+}
+
+.setup-button.primary:hover {
+    background: #dddddd;
+}
+
+.setup-button.secondary {
+    background: #303746;
+    color: white;
+}
+
+.setup-button.secondary:hover {
+    background: #414b5e;
+}
+
+
+/* ========================================
+   INSTALLATION PROGRESS
+   ======================================== */
+
+#progress-container {
+    width: min(500px, 100%);
+
+    height: 10px;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #303642;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: white;
+
+    transition: width 0.25s ease;
+}
+
+#progress-text {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+
+/* ========================================
+   SETUP FOOTER
+   ======================================== */
+
+#setup-footer {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    opacity: 0.45;
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .window {
+        width: calc(100vw - 30px);
+        max-width: 500px;
+    }
+
+    #lock-time {
+        font-size: 65px;
+    }
+
+    #start-menu {
+        width: calc(100vw - 20px);
+    }
+
+    #desktop-icons {
+        gap: 8px;
+    }
+
+    #setup-header {
+        padding: 0 20px;
+    }
+
+    .setup-page h1 {
+        font-size: 27px;
+    }
+
+    .setup-option {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+    .setup-option select {
+        width: 100%;
+    }
+}
+
